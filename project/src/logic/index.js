@@ -59,8 +59,7 @@ function declareWinner(game, plr) {
 
 export const makeMove = (game, pos) => {
 
-/* 
-  console.log(game,pos); */
+
   if (game.playerBoard[pos] == 0) {
     if (game.playerState == 'plr1') {
       game.playerBoard[pos] = 1;
@@ -72,7 +71,7 @@ export const makeMove = (game, pos) => {
       declareWinner(game, 2);
     }
   }
-  // filtrerar fram array med 0 lediga platser = tom array / draw state (för att inga items möter kraven för den nya arrayn)
+  
   if (game.playerState == 'plr1' || game.playerState == 'plr2') {
     let freeTiles = game.playerBoard.filter(pos=>pos === 0).length;
     if (freeTiles == 0) {
